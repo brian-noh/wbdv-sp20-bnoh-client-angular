@@ -21,7 +21,8 @@ export class ModuleListComponent implements OnInit {
       this.courseId = params.cid;
       this.moduleId = params.mid;
     })
-    fetch(`https://wbdv-generic-server.herokuapp.com/api/001272260/courses/${this.courseId}/modules`)
+
+    fetch(`https://wbdv-generic-server.herokuapp.com/api/jannunzi/courses/${this.courseId}/modules`)
       .then(response => response.json())
       .then(modules => this.modules = modules);
   }
