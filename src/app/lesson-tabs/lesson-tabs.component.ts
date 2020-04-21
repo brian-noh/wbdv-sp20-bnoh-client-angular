@@ -24,7 +24,7 @@ export class LessonTabsComponent implements OnInit {
       this.courseId = params.cid;
       this.moduleId = params.mid;
       this.lessonId = params.lid;
-      fetch(`https://wbdv-generic-server.herokuapp.com/api/001203225/modules/${this.moduleId}/lessons`)
+      fetch(`https://wbdv-generic-server.herokuapp.com/api/001272260/modules/${this.moduleId}/lessons`)
         .then(response => response.json())
         .then(lessons => this.lessons = lessons);
     });
