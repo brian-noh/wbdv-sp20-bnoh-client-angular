@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-course-viewer',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseViewerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
+  courseId: '';
+  course = {
+    _id: '',
+    title: ''
+  }
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.courseId = params.cid;
+      fetch(`https://wbdv-generic-server.herokuapp.com/api/001272260/courses/${this.courseId}`)
+        .then(response => response.json())
+        .then(course => this.course = course);
+    });
   }
 
 }
