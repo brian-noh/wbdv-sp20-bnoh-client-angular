@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "bnoh-client-angular"
+    }
+  },
+  "defaultProject": "bnoh-client-angular",
+  "cli": {
+    "analytics": false
+  }
 }
