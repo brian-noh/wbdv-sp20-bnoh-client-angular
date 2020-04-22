@@ -2,13 +2,19 @@
 <h4>{{question.question}}</h4>
 
 <label>
-  <input type="radio" name="{{question._id}}"/> True
+  <input type="radio"
+         value="true"
+         [(ngModel)]="answer"
+         name="{{question._id}}"/> True
 </label>
 
 <br/>
 
 <label>
-  <input type="radio" name="{{question._id}}"/> False
+  <input type="radio"
+         value="false"
+         [(ngModel)]="answer"
+         name="{{question._id}}"/> False
 </label>
 
 <br/>
@@ -17,3 +23,6 @@ Your Answer: {{answer}}
 <div>
   {{question.correct}}
 </div>
+
+<span [hidden]="answer !== question.correct"> Yay</span>
+<span [hidden]="answer === question.correct"> oops</span>
