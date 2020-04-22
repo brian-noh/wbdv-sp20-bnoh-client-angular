@@ -1,0 +1,19 @@
+<h3>{{question.title}}</h3>
+<h4>{{question.question}}</h4>
+
+<label>
+  <input type="radio" name="{{question._id}}"/> True
+</label>
+
+<br/>
+
+<label>
+  <input type="radio" name="{{question._id}}"/> False
+</label>
+
+<br/>
+
+Your Answer: {{answer}}
+<div>
+  {{question.correct}}
+</div>
